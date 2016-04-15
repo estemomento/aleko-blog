@@ -1,0 +1,39 @@
+#comment
+{
+	font-family: 'Times New Roman','Microsoft YaHei';
+}
+#comments
+{
+	font-size: 20px;
+}
+dt
+{
+	font: 15px Segoe UI;
+	color: #fff;
+	font-style: italic;
+	margin:0 30px 0 0;
+}
+label
+{
+	display: inline;
+	float: left;
+	width: 150px;
+}
+input, textarea
+{
+	width: 340px;
+}
+textarea
+{
+	height: 120px;
+}
+input[type=submit]
+{
+	height: 30px;
+	width: 80px;
+	margin-left: 0px;
+}
+.submit
+{
+	margin-left: 320px;
+}

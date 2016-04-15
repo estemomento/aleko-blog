@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+  {% load comments %}
+  {% load staticfiles %}
+  {% block css %}<link rel="stylesheet" href="{% static "./blog/comment.css" %}">{% endblock css %}
+  {% block title %}{{ post.title }}{% endblock title %}
+  {% block content %}
+  <div class="left">
+  <h2>{{ post.title }}</h2>
+  <p class="timestamp">By {{  post.author }} at {{ post.create_date | date:"F jS, Y - H:i"}}</p>
+  <p class="timestamp">Modified : {{ post.modify_date | date:"F jS, Y - H:i"}} </p>
+
+  <p class="context">{{ post.body|safe }}</p>
+    <div id="comment">
+    <h2>评论：</h2>
+    {% render_comment_list for post %}
+    <h2>发表评论：</h2>
+    {% render_comment_form for post %}
+    </div>
+  </div>
+  {% endblock %}

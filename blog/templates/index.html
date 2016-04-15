@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?8e325c0380e5efc8461d685452382b1c";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+	<title>Home - Where is Aleko?</title>
+	{% load staticfiles %}
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{% static "./blog/aleko.css" %}">
+	<link rel="stylesheet" href="{% static "./blog/index.css" %}">
+	<link rel="shortcut icon" href="{% static "./blog/favicon.ico" %}">
+</head>
+
+<body>
+	<nav class="navbar" role="navigation">
+	<div class="nav-brand"><h1><a href="http://www.alekolau.cn">Where is Aleko?</a></h1></div>
+		<div class="navlink">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/index">His life?</a></li>
+				<li><a href="/blog">His blog?</a></li>
+				<li><a href="/about">Who is he?</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="indexwrapper">
+		<div class="lt"><img src="{% static "./blog/code0.jpg" %}"  onmouseover="this.src='{% static "./blog/code1.jpg" %}'" onmouseout="this.src='{% static "./blog/code0.jpg" %}'"></div>
+		<div class="rt"><img src="{% static "./blog/guitar0.jpg" %}"  onmouseover="this.src='{% static "./blog/guitar1.jpg" %}'" onmouseout="this.src='{% static "./blog/guitar0.jpg" %}'"></div>
+		<div class="lb"><img src="{% static "./blog/phonetic0.jpg" %}"  onmouseover="this.src='{% static "./blog/phonetic1.jpg" %}'" onmouseout="this.src='{% static "./blog/phonetic0.jpg" %}'"></div>
+		<div class="rb"><img src="{% static "./blog/stamp0.jpg" %}"  onmouseover="this.src='{% static "./blog/stamp1.jpg" %}'" onmouseout="this.src='{% static "./blog/stamp0.jpg" %}'"></div>
+	</div>
+	<div class="footer" align="center">
+		<p class="timestamp">Copyright 2016 Aleko Lau, All Rights Reserved.</p>
+		<a class="footfont" href="/admin" width="200px">Admin</a>
+		<a href="http://www.miitbeian.gov.cn/" class="footfont">粤ICP备16027334号</a>
+	</div>
+
+</body>
+</html>

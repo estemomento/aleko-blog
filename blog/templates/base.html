@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?8e325c0380e5efc8461d685452382b1c";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <title>{% block title %}Blog{% endblock title %} - Where is Aleko?</title>
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "./blog/syntax/scripts/shCore.js" %}"></script>
+    <script type="text/javascript" src="{% static "./blog/syntax/scripts/shBrushBash.js"%}"></script>
+    <script type="text/javascript" src="{% static "./blog/syntax/scripts/shBrushPython.js"%}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static "./blog/syntax/styles/shCoreEclipse.css"%}"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script type="text/javascript">SyntaxHighlighter.defaults['toolbar'] = false;</script>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static "./blog/aleko.css" %}">
+    <link rel="shortcut icon" href="{% static "./blog/favicon.ico" %}">
+    <script type="text/javascript" src="{% static "./blog/syntax/scripts/shCore.js" %}"></script>
+    <script type="text/javascript" src="{% static "./blog/syntax/scripts/shBrushBash.js"%}"></script>
+    <script type="text/javascript" src="{% static "./blog/syntax/scripts/shBrushPython.js"%}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static "./blog/syntax/styles/shCoreEclipse.css"%}"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script type="text/javascript">SyntaxHighlighter.defaults['toolbar'] = false;</script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation">
+        <div class="nav-brand"><h1><a href="http://www.alekolau.cn">Where is Aleko?</a></h1></div>
+        <div class="navlink">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/index">His life?</a></li>
+                <li><a href="/blog">His blog?</a></li>
+                <li><a href="/about">Who is he?</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block css %}
+    {% endblock css %}
+    {% block content %}
+    {% endblock content %}
+    <div class="right">
+        <div class="category">
+            <h2> 目录 </h2>
+            {% for category in categories %}
+            <a href="/category/{{category.addr}}" class="categories">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="musicbox">
+            <h2> 音乐 </h2>
+            <script type="text/javascript" language="javascript">
+                function iFrameHeight() {
+                    var ifm= document.getElementById("mplayer");
+                    var subWeb = document.frames ? document.frames["mplayer"].document :
+                    ifm.contentDocument;
+                    if(ifm != null && subWeb != null) {
+                        ifm.height = subWeb.body.scrollHeight;
+                    }
+                }
+            </script>
+            <iframe id="mplayer" name="mplayer" frameborder="no" border="0" marginwidth="0" marginheight="0" height="450px" src="http://music.163.com/outchain/player?type=0&id=35601506&auto=0&height=430" onload="iFrameHeight()"></iframe>
+        </div>
+        <div class="extlink">
+            <h2> 友情链接 </h2>
+            <a class="link" href="http://blog.wangziq.in/">子勤的小天地</a>
+            <a class="link" href="http://www.armyja.cn/">艾米杰的博客</a>
+        </div>
+    </div>
+    <div class="footer" align="center">
+        <p class="timestamp">Copyright 2016 Aleko Lau, All Rights Reserved.</p>
+        <a class="footfont" href="/admin" width="200px">Admin</a>
+        <a href="http://www.miitbeian.gov.cn/" class="footfont">粤ICP备16027334号</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?8e325c0380e5efc8461d685452382b1c";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+	<title>{% block title %}Home{% endblock title %} - Aleko's Blog</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static "./blog/blogindex.css" %}">
+	<link rel="shortcut icon" href="{% static "./blog/favicon.ico" %}">
+</head>
+
+<body>
+	<h1><a href="http://www.alekolau.cn" class="h1">Aleko's Blog</a></h1>
+	{% block css %}
+	{% endblock css %}
+	{% block content %}
+	{% endblock content %}
+	<div id="category">
+		<h2> 目录 </h2>
+		{% for category in categories %}
+		<a href="/category/{{category.addr}}" class="category">{{ category.name }}</a>
+		{% endfor %}
+	</div>
+	<br>
+	<div id="musicbox">
+		<h2> 音乐 </h2>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="http://music.163.com/outchain/player?type=0&id=35601506&auto=0&height=430"></iframe>
+	</div>
+	<div id="footer" align="center">
+		<p class="timestamp">Copyright 2016 Aleko Lau, All Rights Reserved.</p>
+		<a id="admin" href="/admin" >Admin</a>
+	</div>
+
+</body>
+</html>

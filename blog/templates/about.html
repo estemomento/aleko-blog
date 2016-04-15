@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+  {% load comments %}
+  {% load staticfiles %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static "./blog/comment.css" %}">
+  <style type="text/css">#intro{font-size: 22px;}</style>
+  {% endblock css %}
+  {% block title %}About{% endblock title %}
+  {% block content %}
+  <div class="left">
+		<p>&nbsp;</p>	
+		<img src="{% static "./blog/aleko.jpg" %}" alt="" width="60%">
+		<p id="intro"><b>编程·外语·吉他·方言</b></p>
+		<p id="intro">更多有关个人信息欢迎访问 <a class="link" href="https://zh.wikipedia.org/wiki/User:Este_Momento">我的维基百科主页</a></p>
+		<p id="intro">联系站长：</p>
+    <code>WVd4bGFtRnVaSEp2YkdGMVFHMXpiaTVqYmc9PQ==</code>
+		<p id="intro">本网页在 Python 3.4.3 + Django 1.9.4 基础上搭建而成</p>
+	</div>
+  {% endblock %}
