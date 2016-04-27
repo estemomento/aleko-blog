@@ -1,6 +1,10 @@
 # Aleko's Blog Ver 1.0
 
 ## Update log
+
+### V 1.1
+Responsive front-end design and "Hit and like" function. 
+
 ### V 1.0
 Commit codes to GitHub and deal with some tiny bugs :)
 
