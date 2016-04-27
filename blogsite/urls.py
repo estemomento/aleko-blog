@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^post/(?P<post_addr>[^/]+)/$', 'blog.views.post', name='post'),
     url(r'^comments/', include(Comment_urls)),
     url(r'^ludan/', 'blog.views.ludan'),
+    url(r'^oreilly/', 'blog.views.orgen')
 ]
 
 # use Django server /media/ files

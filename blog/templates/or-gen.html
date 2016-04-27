@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% load staticfiles %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>O'Reilly 封面生成器</title>
+    <meta name="viewport" content="width=device-width">
+
+ 
+    <link href="{% static "./or-gen/css"%}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static "./or-gen/master.css"%}">
+
+    <script async="" src="{% static "./or-gen/analytics.js"%}"></script><script src="{% static "./or-gen/jquery-1.9.0.min.js"%}"></script>
+    <script src="{% static "./or-gen/jquery.mousewheel.js"%}"></script>
+    <script src="{% static "./or-gen/jquery-ui.min.js"%}"></script>
+    <script src="{% static "./or-gen/jquery.ui.touch-punch.js"%}"></script>
+    <script src="{% static "./or-gen/master.js"%}"></script>
+    <script src="{% static "./or-gen/capture.js"%}"></script>
+  </head>
+<body style="zoom: 1; overflow: auto; cursor: auto;">
+
+<canvas id="book_image" width="516" height="660"></canvas>
+<div id="generator" class="contents_cover">
+  <div id="book_cover">
+    <div id="book_head" class="theme_3">
+      <p id="subtitle_en" contenteditable="true">O<span id="apostrophe" class="theme_3">'</span>Reilly 权威参考书籍</p>
+      <p id="ribbon" class="hidden" contenteditable="true" style="display: hidden;">第6版</p>
+    </div>
+    <div id="book_body">
+      <p id="subtitle_ja_above" contenteditable="true">
+      </p><div id="book_title_cover" class="theme_3">
+        <p id="book_title_above" contenteditable="true">从入门到完全放弃</p>
+        <p id="book_title_below" contenteditable="true">Apache + PHP</p>
+      </div>
+      <p id="subtitle_ja_below" contenteditable="true">告诉你史上最差的网页开发后台组合</p>
+    </div>
+    <div id="animal" class="animal_7" data-animal-index="7" style="left: 252px; top: 228px;"></div>
+    <div id="book_foot">
+      <div id="foot_left">
+        <p id="logo_en" contenteditable="true">O'REILLY</p>
+        <p id="logo_ja" contenteditable="true">人民邮电出版社</p>
+      </div>
+      <div id="foot_right">
+        <p id="author" contenteditable="true">Too Young</p>
+        <p id="translator" contenteditable="true">涂森魄</p>
+      </div>
+    </div>
+  </div>
+  <div id="nav_cover">
+    <div id="theme_box">
+      <p id="ribbon_half" class="" style="display: block;"></p>
+      <p class="box_title">选择书籍主题</p>
+      <ul>
+        <li class="Web_design_and_authoring" title="Web 设计与制作">Web Design &amp; Authoring
+        </li><li class="power_user_computing" title="高级用户计算">Power User Computing
+        </li><li class="in_a_nutshell_and_desktop_references" title="“简约不简单”及桌面参考">In a NutShell &amp; Desktop References
+        </li><li class="java" title="Java">Java
+        </li><li class="linux" title="Linux">Linux
+        </li><li class="macintosh" title="Mac">Macintosh
+        </li><li class="oracle" title="Oracle">Oracle
+        </li><li class="perl" title="Perl">Perl
+        </li><li class="security" title="安全">Security
+        </li><li class="system_and_network_administration" title="系统与网络管理">System &amp; Network Administration
+        </li><li class="unix_c_programming" title="UNIX/C 编程">UNIX/C Programming
+        </li><li class="unix_text_procsseing" title="UNIX 文本处理">UNIX Text Processing
+        </li><li class="the_web" title="Web">The Web
+        </li><li class="windows_programming" title="Windows 编程">Windows Programming
+        </li><li class="windows_nt_system_administration" title="Windows NT 系统管理">Windows NT System Administration
+        </li><li class="xml" title="XML">XML
+        </li><li class="mobile" title="移动端">Mobile
+      </li></ul>
+    </div>
+    <div id="animal_box">
+      <p class="box_title">选择动植物图案</p>
+      <ul>
+        <li class="animal_1" title="灰熊">Grizzly Bear
+        </li><li class="animal_2" title="猫">Cat
+        </li><li class="animal_3" title="狼">Coyote
+        </li><li class="animal_4" title="奶牛">Cow
+        </li><li class="animal_5" title="马">Horse
+        </li><li class="animal_6" title="鹿">Deer
+        </li><li class="animal_7" title="狒狒">Baboon
+        </li><li class="animal_8" title="袋熊">Wombat
+        </li><li class="animal_9" title="鸭嘴兽">Duckbill
+        </li><li class="animal_10" title="蝙蝠">Bat
+        </li><li class="animal_11" title="鹈鹕">Pelican
+        </li><li class="animal_12" title="鲸头鹳">Shoebill
+        </li><li class="animal_13" title="乌鸦">Raven
+        </li><li class="animal_14" title="弯嘴鸻">Wrybill
+        </li><li class="animal_15" title="鸵鸟">Ostrich
+        </li><li class="animal_16" title="变色龙">Chameleon
+        </li><li class="animal_17" title="青蛙">Rrog
+        </li><li class="animal_18" title="蝾螈">Axolotl
+        </li><li class="animal_19" title="蛇">Snake
+        </li><li class="animal_20" title="豹纹壁虎">Leopard Gecko
+        </li><li class="animal_21" title="鲇">Silurus
+        </li><li class="animal_22" title="海鲂">John Dory
+        </li><li class="animal_23" title="裸躄鱼">Histrio
+        </li><li class="animal_24" title="七鳃鳗">Lamprey
+        </li><li class="animal_25" title="翻车鱼">Sunfish
+        </li><li class="animal_26" title="蝴蝶">Butterfly
+        </li><li class="animal_27" title="蛾">Moth
+        </li><li class="animal_28" title="跳蚤">Dragonfly
+        </li><li class="animal_29" title="蜻蜓">Flea
+        </li><li class="animal_30" title="椿象">Stinkbug
+        </li><li class="animal_31" title="蜘蛛">Spider
+        </li><li class="animal_32" title="蝎子">Scorpion
+        </li><li class="animal_33" title="蟹">Crab
+        </li><li class="animal_34" title="龙虾">Lobster
+        </li><li class="animal_35" title="鲎">Horseshoe Crab
+        </li><li class="animal_36" title="海参">Sea Cucumber
+        </li><li class="animal_37" title="鲍鱼">Earshell
+        </li><li class="animal_38" title="水母">Jellyfish
+        </li><li class="animal_39" title="蝾螺">Astraea
+        </li><li class="animal_40" title="蘑菇">Mushroom
+      </li></ul>
+    </div>
+    
+  </div>
+  <form action="http://oreilly-generator.com/" method="post" name="captureForm" id="captureForm">
+    <input name="_qf__captureForm" type="hidden" value="">
+<input name="_token" type="hidden" value="fe5879b319a9107d29685e11981e79d3145dd7a0">
+<input name="image" type="hidden" value="">
+<input name="title" type="hidden" value="">
+<input name="author" type="hidden" value="">
+<input name="translator" type="hidden" value="">
+
+  </form>
+  <!--#box_cover -->
+</div>
+</body></html>

@@ -8,6 +8,7 @@ class BlogCategory(models.Model):
     name = models.CharField(max_length = 20)
     addr = models.CharField(max_length = 256, db_index = True, default='')
     intro = models.TextField
+    article_num = models.IntegerField(default = 0)
     def __str__(self):
         return self.name
     class Meta:
@@ -21,10 +22,16 @@ class BlogPost(models.Model):
     author = models.CharField(max_length=128, default='Aleko')
     category = models.ManyToManyField(BlogCategory)
     create_date = models.DateTimeField(auto_now_add=False)
-    modify_date = models.DateTimeField(auto_now=True)
+    modify_date = models.DateTimeField(auto_now=False)
+    summary = UEditorField('Summary', height=100, width=300,
+        default=u'', blank=True, imagePath="uploads/images/",
+        toolbars='mini', filePath='uploads/files/', videoPath='uploads/videos/')
     body = UEditorField('Content', height=300, width=1000,
         default=u'', blank=True, imagePath="uploads/images/",
         toolbars='full', filePath='uploads/files/', videoPath='uploads/videos/')
+    hit = models.IntegerField(default = 0) 
+    like = models.IntegerField(default = 0)
+    dislike = models.IntegerField(default = 0)
     def __str__(self):
         return self.title
     class Meta:

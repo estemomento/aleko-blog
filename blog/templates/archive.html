@@ -1,13 +1,16 @@
 {% extends "base.html" %}
-  {% block content %}
-  <div class="left" >
+{% block content %}
+<div class="left" >
   {% for post in posts %}
-  <h2><a href="/post/{{post.addr}}">{{  post.title }}</a></h2>
-  <p class="timestamp">By {{  post.author }} at {{ post.create_date | date:"F jS, Y - H:i"}}</p>
-  <p class="timestamp">Modified : {{ post.modify_date | date:"F jS, Y - H:i"}} </p>
+  <div class="post">
+    <h2><a href="/post/{{post.addr}}">{{  post.title }}</a></h2>
+    <p class="timestamp">{{  post.author }}, {{ post.create_date | date:"Y/m/d"}}</p>
+    <p class="timestamp">编辑： {{ post.modify_date | date:"Y/m/d H:i"}} </p>
 
-  <p class="context">{{ post.body|safe }}</p>
-  {% endfor %}
+    <div class=""><p class="context">{{ post.summary|safe }}</p></div>
+    <form class="info" method="post">{% csrf_token %} 浏览：{{ post.hit }}  <input type="submit" id="like" name='like' value="赞（{{ post.like }}）"><input type="submit" id="dislike" name='dislike' value="踩（{{ post.dislike }}）"></form>
   </div>
-  
-  {% endblock %}
+  {% endfor %}
+</div>
+
+{% endblock %}

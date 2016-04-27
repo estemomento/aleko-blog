@@ -21,9 +21,11 @@
     <script type="text/javascript">SyntaxHighlighter.all();</script>
     <script type="text/javascript">SyntaxHighlighter.defaults['toolbar'] = false;</script>
     <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "./blog/bootstrap-responsive.min.css"%}" rel="stylesheet">
     <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static "./blog/aleko.css" %}">
+    <link rel="stylesheet" href="{% static "./blog/mobile.css" %}" media="screen and (max-width:979px)">
+    <link rel="stylesheet" href="{% static "./blog/aleko.css" %}" media="screen and (min-width:980px)">
     <link rel="shortcut icon" href="{% static "./blog/favicon.ico" %}">
     <script type="text/javascript" src="{% static "./blog/syntax/scripts/shCore.js" %}"></script>
     <script type="text/javascript" src="{% static "./blog/syntax/scripts/shBrushBash.js"%}"></script>
@@ -34,7 +36,31 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation">
+    <nav class="mobile navbar visible-mobile hidden-tablet" role="navigation">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><img src="/static/blog/menu_call.png" alt="nav" width="100%"></button> 
+            <div class="nav-brand"><h3><a href="http://www.alekolau.cn">Where is Aleko?</a></h3></div>
+          </div>
+
+          <div class="collapse navbar-collapse navlink">    
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/index">His life?</a></li>
+                <li><a href="/blog">His blog?</a></li>
+                <li><a href="/about">Who is he?</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="tablet navbar visible-tablet hidden-mobile" role="navigation">
+        <div class="nav-brand"><h3><a href="http://www.alekolau.cn">Where is Aleko?</a></h3></div>
+        <div class="navlink">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/index">His life?</a></li>
+                <li><a href="/blog">His blog?</a></li>
+                <li><a href="/about">Who is he?</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="desktop navbar visible-desktop" role="navigation">
         <div class="nav-brand"><h1><a href="http://www.alekolau.cn">Where is Aleko?</a></h1></div>
         <div class="navlink">
             <ul class="nav navbar-nav">

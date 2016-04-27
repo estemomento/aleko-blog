@@ -20,6 +20,12 @@ def about(request):
 def post(request, post_addr):
     post = BlogPost.objects.get(addr = post_addr)
     categories = BlogCategory.objects.all()
+    post.hit += 1
+    if 'like' in request.POST:
+        post.like += 1
+    if 'dislike' in request.POST:
+        post.dislike += 1
+    post.save()
     return render(request, 'post.html', {'post': post, 'categories':categories})
 
 def category(request, category_addr):
@@ -32,3 +38,6 @@ def ludan(request):
 
 def index(request):
     return render(request, 'index.html')
+
+def orgen(request):
+    return render(request, 'or-gen.html')

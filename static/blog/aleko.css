@@ -3,7 +3,7 @@ body
 	font-family: "Segoe UI","Microsoft YaHei","San Francisco",sans-serif;
 	color:#fff;
 	background-image: url("bg.jpg");
-	padding:0 6%;
+	padding:0 5%;
 	margin:0
 }
 a, a:visited, a:active, a:focus
@@ -34,15 +34,35 @@ a:hover
 
 .left
 {
-	width: 60%;
+	width: 63%;
 	float:left;
 	padding: 1px 20px 20px 20px;
 	background-color: #606579;
 	opacity: 0.9;
 }
+
+.post
+{
+	width: 100%;
+	float: left;
+	margin: 1em 0;
+}
+
+.info
+{
+	float: right;
+}
+
+#like, #dislike
+{
+	background: #229;
+	color: #fff;
+	border: 0;
+}
+
 .right
 {
-	width: 38%;
+	width: 35%;
 	float:right;
 }
 .extlink
@@ -83,11 +103,11 @@ a:hover
 	background-color: #606579;
 	opacity: 0.9;
 }
-.navbar, .navbar a
+.navbar, .desktop a
 {
 	color: #fff;
 	text-decoration: none;
-	font: 55px Georgia;
+	font: 50px Georgia;
 	font-weight: bold;
 	font-style: italic;
 	padding:0 15px;
@@ -161,4 +181,8 @@ a.footfont
 		box-shadow:0 0 10px 5px white
 	}
 
+}
+.mobile
+{
+	display: none;
 }
